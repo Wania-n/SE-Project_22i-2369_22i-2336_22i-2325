@@ -25,6 +25,9 @@ public class Event {
     @Column(name = "total_price")
     private float total_price;
 
+    @Column(name = "event_theme")
+    private String theme;
+
     @ManyToOne
     @JoinColumn(name = "organizerID", nullable = false)
     private Organizer organizer;

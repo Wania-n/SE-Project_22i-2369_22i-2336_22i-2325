@@ -64,7 +64,7 @@ public class OrganizerController {
         if(login == null){
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
         }else{
-            // Log in  for debugging
+            // Log in for debugging
             System.out.println("Receiving Organizer Login data: " + login);
             System.out.println("Organizer Username: " + login.getUsername());
             System.out.println("Organizer Password: " + login.getPassword());
@@ -79,5 +79,61 @@ public class OrganizerController {
         }
 
     }
+
+    // Delete Organizer
+    @PostMapping("/delete")
+    public ResponseEntity<String> deleteOrganizer(@RequestBody LoginRequest login){
+
+        // Checking for data retrieval
+        if(login == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+        }else{
+            // Log in for debugging
+            System.out.println("Receiving Organizer Login data: " + login);
+            System.out.println("Organizer Username: " + login.getUsername());
+            System.out.println("Organizer Password: " + login.getPassword());
+        }
+
+        // Call the Organizer Layer
+        boolean isdeleted = organizerService.deleteOrganizer(login);
+        if(isdeleted){
+            return ResponseEntity.ok("Organizer deleted successfully!");
+        }else{
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete organizer.");
+        }
+    }
+
+    // Edit Organizer
+    @PostMapping("/edit")
+    public ResponseEntity<String> editOrganizer(@RequestBody Organizer organizer){
+
+        // Checking for correct data passing
+        if (organizer == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+        }else {
+            // Log data for debugging
+            System.out.println("Received Organizer Data: " + organizer);
+            System.out.println("Organizer username: " + organizer.getUsername());
+            System.out.println("Organizer password: " + organizer.getPassword());
+            System.out.println("Organizer address: " + organizer.getAddress());
+            System.out.println("Organizer email: " + organizer.getEmail());
+            System.out.println("Organizer firstname: " + organizer.getFirstname());
+            System.out.println("Organizer lastname: " + organizer.getLastname());
+            System.out.println("Organizer phone: " + organizer.getPhone());
+            System.out.println("Organizer DOB: " + organizer.getDOB());
+        }
+
+        // Call the organizer service layer
+        boolean isEdited = organizerService.editOrganizer(organizer);
+        if (isEdited) {
+            return ResponseEntity.ok("Organizer edited successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to edit organizer.");
+        }
+    }
+
+    // Event-Related Functions here -----------------------------------
+    //@PostMapping("/bookEvent")
+    //public ResponseEntity<String> bookEvent(@)
 
 }

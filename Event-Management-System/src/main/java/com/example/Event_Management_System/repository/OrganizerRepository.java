@@ -7,4 +7,9 @@ public interface OrganizerRepository extends JpaRepository<Organizer, Integer> {
     // Implement all the custom queries here
     boolean existsByUsernameAndPassword(String username, String password);
 
+    boolean existsByUsername(String username);
+
+    void deleteByUsername(String username);
+
+    Organizer findByUsername(String username);
 }

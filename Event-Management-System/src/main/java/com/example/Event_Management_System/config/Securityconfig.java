@@ -21,7 +21,7 @@ public class Securityconfig {
                 .csrf(csrf -> csrf.disable()) // Disable CSRF for testing
                 .cors(cors -> cors.configurationSource(corsConfigurationSource()))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/organizer/signup", "/api/organizer/login").permitAll()
+                        .requestMatchers("/api/organizer/signup", "/api/organizer/login", "/api/organizer/delete", "/api/organizer/edit").permitAll()
                         .anyRequest().authenticated() // Other requests need authentication
                 )
                 .build();
