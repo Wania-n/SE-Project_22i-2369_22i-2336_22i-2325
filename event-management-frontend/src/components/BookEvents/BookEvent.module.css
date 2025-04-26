@@ -1,0 +1,75 @@
+.bookEventContainer {
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto; /* Center the form */
+  }
+  
+  .bookEventContainer h2 {
+    color: #8c5363;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .formGroup {
+    margin-bottom: 15px;
+  }
+  
+  .formGroup label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+  }
+  
+  .formGroup input[type='text'],
+  .formGroup input[type='datetime-local'],
+  .formGroup select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .buttonGroup {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  
+  .buttonGroup button {
+    background-color: #e8c2ca;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttonGroup button:hover {
+    background-color: #c78594;
+  }
+  
+  .buttonGroup button[type="submit"] {
+    background-color: #5cb85c; /* Example submit button color */
+  }
+  
+  .buttonGroup button[type="submit"]:hover {
+    background-color: #4cae4c;
+  }
+  
+  .buttonGroup button:first-child {
+    background-color: #f44336; /* Example back button color */
+  }
+  
+  .buttonGroup button:first-child:hover {
+    background-color: #d32f2f;
+  }

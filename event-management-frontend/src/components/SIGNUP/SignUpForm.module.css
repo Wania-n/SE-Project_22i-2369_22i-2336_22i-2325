@@ -1,0 +1,194 @@
+.container {
+    background-color: #643843;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    display: flex;
+  }
+  
+  .card {
+    background-color: #b47b84;
+    border-radius: 15px;
+    width: 475px;
+    padding: 22px;
+    box-shadow: 8px 8px 4px #00000040;
+  }
+  
+  @media (width<=991px) {
+    .card {
+      width: 90%;
+      max-width: 475px;
+    }
+  }
+  
+  @media (width<=640px) {
+    .card {
+      width: 100%;
+    }
+  }
+  
+  .formContainer {
+    background-color: #e7cbcf;
+    border-radius: 15px;
+    padding: 35px 20px;
+  }
+  
+  .formTitle {
+    color: #643843;
+    text-align: center;
+    margin-bottom: 10px;
+    font-family: Faustina, serif;
+    font-size: 24px;
+  }
+  
+  .divider {
+    background-color: #b47b84;
+    width: 367px;
+    height: 1px;
+    margin: 0 auto 12px;
+    text-decoration-line: underline;
+  }
+  
+  @media (width<=640px) {
+    .divider {
+      width: 100%;
+    }
+  }
+  
+  .formSubtitle {
+    color: #944e63;
+    text-align: center;
+    text-shadow: 0 2px 2px #00000040;
+    margin-bottom: 40px;
+    font-family: Fascinate, cursive;
+    font-size: 32px;
+  }
+  
+  .inputGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 44px 62px;
+    margin-bottom: 40px;
+    display: grid;
+  }
+  
+  @media (width<=991px) {
+    .inputGrid {
+      gap: 30px;
+    }
+  }
+  
+  @media (width<=640px) {
+    .inputGrid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  }
+  
+  .inputWrapper {
+    width: 149px;
+  }
+  
+  @media (width<=991px) {
+    .inputWrapper {
+      width: 100%;
+    }
+  }
+  
+  .formInput {
+    color: #000000;
+    background-color: #d9d9d9;
+    border: 1px solid #b47b84;
+    border-radius: 10px;
+    width: 100%;
+    height: 27px;
+    padding: 0 9px;
+    font-family: Expletus Sans, cursive;
+    font-size: 11px;
+  }
+  
+  /* Style for placeholder text */
+  .formInput::placeholder {
+    color: #cca7a7;
+    opacity: 1;
+  }
+  
+  /* Date input specific styles */
+  .dateInput {
+    /* Reset browser default styles */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Ensure text color is black */
+    color: #000000;
+  }
+  
+  /* Style the calendar icon */
+  .dateInput::-webkit-calendar-picker-indicator {
+    filter: invert(0.5) sepia(1) saturate(0.5) hue-rotate(300deg);
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    margin-left: 4px;
+  }
+  
+  /* For Firefox */
+  .dateInput::-moz-calendar-picker-indicator {
+    filter: invert(0.5) sepia(1) saturate(0.5) hue-rotate(300deg);
+    cursor: pointer;
+    opacity: 0.7;
+  }
+  
+  /* Placeholder styling for date inputs */
+  .dateInput::placeholder {
+    color: #cca7a7;
+    opacity: 1;
+  }
+  
+  /* Ensure text is black when typing in any input */
+  .formInput:focus {
+    color: #000000;
+    outline: none;
+  }
+  
+  .buttonContainer {
+    justify-content: space-between;
+    padding: 0 20px;
+    display: flex;
+  }
+  
+  @media (width<=640px) {
+    .buttonContainer {
+      padding: 0;
+    }
+  }
+  
+  .backButton {
+    color: #944e63;
+    cursor: pointer;
+    background-color: #b47b84;
+    border: none;
+    border-radius: 10px;
+    width: 73px;
+    height: 24px;
+    font-family: Farro, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 4px 4px #00000040;
+  }
+  
+  .createButton {
+    color: #944e63;
+    cursor: pointer;
+    background-color: #b47b84;
+    border: none;
+    border-radius: 10px;
+    width: 82px;
+    height: 24px;
+    font-family: Farro, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    box-shadow: 0 4px 4px #00000040;
+  }
+  
+  

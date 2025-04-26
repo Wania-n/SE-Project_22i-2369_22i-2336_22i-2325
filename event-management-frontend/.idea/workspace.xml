@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="87993f45-222b-4775-9d72-adcfb83f7421" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/OrganizerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/OrganizerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/OrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/OrganizerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/event-management-frontend.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/robots.txt" beforeDir="false" afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.test.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventHomePage.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventHomePage.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventLoginForm.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/EventLoginForm.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormActions.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FormHeader.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputDesign.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputDesign.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputField.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/InputGrid.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Signup.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Signup.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reportWebVitals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reportWebVitals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/setupTests.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/setupTests.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "Wania-n"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Wania-n/Event-Management-System.git",
+    "accountId": "cfc3a1be-bc42-4d90-8e54-67532dd18200"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="2wHOmlOz3T8M0GZTjmvPcdFIlLi" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "b6c68f72",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/wania/OneDrive/Documents/Semester-6 (FAST)/Software Engineering/SE-Project_Event-Management-System/event-management-frontend"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="87993f45-222b-4775-9d72-adcfb83f7421" name="Changes" comment="" />
+      <created>1745695196081</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1745695196081</updated>
+    </task>
+    <servers />
+  </component>
+</project>

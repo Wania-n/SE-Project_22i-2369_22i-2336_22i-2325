@@ -1,0 +1,102 @@
+/* ADDVENDOR/VendorForm.module.css */
+.vendorForm {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin: 20px auto;
+    }
+   
+    .vendorForm h2 {
+    color: #8c5363;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    }
+   
+    .vendorForm label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: bold;
+    }
+   
+    .vendorForm input[type="text"],
+    .vendorForm input[type="email"],
+    .vendorForm input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    }
+   
+    .vendorForm button {
+    background-color: #e8c2ca;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-right: 10px;
+    }
+   
+    .vendorForm button:last-child {
+    margin-right: 0;
+    }
+   
+    .vendorForm button:hover {
+    background-color: #c78594;
+    }
+   
+    .vendorList {
+      margin-top: 20px;
+      padding: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+    }
+   
+    .vendorList h3{
+      color: #8c5363;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+   
+    .vendorList ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+   
+    .vendorList li {
+      padding: 8px 0;
+      border-bottom: 1px solid #eee;
+      display: flex; /* Use Flexbox for layout */
+      justify-content: space-between; /* Space between text and button */
+      align-items: center; /* Vertically center items */
+    }
+   
+    .vendorList li:last-child {
+      border-bottom: none;
+    }
+   
+    .vendorList li button {
+      background-color: #ff6b6b; /* Red color for delete */
+      color: white;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+   
+    .vendorList li button:hover {
+      background-color: #ff4757; /* Darker red on hover */
+    }
