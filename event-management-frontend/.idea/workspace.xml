@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87993f45-222b-4775-9d72-adcfb83f7421" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/EventManagementSystemApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/EventManagementSystemApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/AdminController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Admin.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Admin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/AdminRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/AdminRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/AdminService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/AdminService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../EventManagementSystem.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../EventManagementSystem.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ADMINSIGUP/ASignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ADMINSIGUP/ASignUpForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FORMS/EventLoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FORMS/EventLoginForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SIGNUP/SignUpForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SIGNUP/SignUpForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ADMINLOGIN/EventLoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ADMINLOGIN/EventLoginForm.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,5 +54,16 @@
       <updated>1745695196081</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
