@@ -14,13 +14,42 @@ function EventLoginForm({ onBack, onLogin }) {
     setShowPassword(!showPassword);
   };
 
-  const handleSubmit = () => {
-    // In a real application, you would send username and password
-    // to your backend for authentication.
-    // For this example, we'll just simulate a successful login on any input.
-    onLogin(); // Call the onLogin function passed from EventHomePage
-    navigate('/organizer'); // Navigate to the /organizer route after login
+  // code changed for connecting to backend
+  const handleSubmit = async () => {
+    try {
+      const response = await fetch('http://localhost:8080/api/organizer/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          username: username,
+          password: password
+        })
+      });
+
+      if (response.ok) {
+        let data = null;
+        try {
+            data = await response.json(); // Try to parse JSON
+        } catch (err) {
+            console.log('No JSON body, maybe just success message.');
+        }
+        console.log('Login successful:', data);
+
+        onLogin(); // Only call onLogin if login was successful
+        navigate('/organizer'); // Navigate after successful login
+      } else {
+        const errorData = await response.json();
+        console.error('Login failed:', errorData.message);
+        alert('Login failed: ' + (errorData.message || 'Invalid credentials'));
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+      alert('An error occurred. Please try again.');
+    }
   };
+
 
   const handleSignUpClick = () => {
     navigate('/signup'); // Navigate to the /signup route

@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.*;
 @CrossOrigin(origins = "http://localhost:3000")
 public class OrganizerController {
 
-
     // These are the respective references of Service ------------------
     @Autowired
     private OrganizerService organizerService;

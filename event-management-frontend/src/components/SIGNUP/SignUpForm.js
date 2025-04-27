@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./Signup.module.css"; // Keep your existing style file
+import styles from "./SignUpForm.module.css"; // Keep your existing style file
 import { useNavigate } from "react-router-dom"; // Import navigate
 
 // Input Field Component
@@ -51,7 +51,7 @@ function Signup() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
-        mode: "cors"
+        mode: "cors",
       });
 
       const data = await response.text();

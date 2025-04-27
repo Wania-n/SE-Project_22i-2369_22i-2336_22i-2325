@@ -1,16 +1,20 @@
 "use client";
 import React, { useState } from "react";
-import styles from "./ASignUpForm.module.css"; // Assuming all styles are in ASignUpForm.module.css
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import styles from "./ASignUpForm.module.css";
+import { useNavigate } from "react-router-dom";
 
 // Input Field Component
-const InputField = ({ type, placeholder }) => {
+const InputField = ({ type, placeholder, name, value, onChange }) => {
   return (
     <div className={styles.inputWrapper}>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         className={styles.formInput}
+        value={value}
+        onChange={onChange}
+        required
       />
     </div>
   );
@@ -27,85 +31,152 @@ const FormHeader = () => {
   );
 };
 
-// Input Grid Component
-const InputGrid = () => {
-  return (
-    <div className={styles.inputGrid}>
-      <InputField type="text" placeholder="username" />
-      <InputField type="email" placeholder="email@" />
-      <InputField type="password" placeholder="password" />
-      <InputField type="tel" placeholder="phoneNo." />
-      <InputField type="text" placeholder="firstname" />
-      <InputField type="text" placeholder="address" />
-      <InputField type="text" placeholder="lastname" />
-      <InputField type="date" placeholder="DOB" /> {/* Changed to date type here as well */}
-    </div>
-  );
-};
-
-// Form Actions Component
-const FormActions = () => {
-  const navigate = useNavigate(); // Initialize useNavigate
-
-  const handleBackClick = () => {
-    // You can define what happens when the "Back" button is clicked
-    navigate('/'); // Go back to the EventHomePage
-  };
-
-  const handleCreateClick = () => {
-    // Add your logic to handle the creation of the admin account here
-    console.log('Admin account created!');
-    // After successful creation, navigate to the EventHomePage
-    navigate('/');
-  };
-
-  return (
-    <div className={styles.buttonContainer}>
-      <button className={styles.backButton} onClick={handleBackClick}>Back</button>
-      <button className={styles.createButton} onClick={handleCreateClick}>Create</button>
-    </div>
-  );
-};
-
 // Main Signup Component
 function Signup() {
-  const [dob, setDob] = useState("");
+  const navigate = useNavigate();
 
-  const handleDateChange = (e) => {
-    setDob(e.target.value);
+  // Form data state
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    password: "",
+    phoneNo: "",
+    firstname: "",
+    address: "",
+    lastname: "",
+    dob: ""
+  });
+
+  // Handle input change
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value
+    }));
+  };
+
+  // Handle form submission
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+        console.log("Sending Data:", formData);
+
+        try {
+            const response = await fetch('http://localhost:8080/api/admin/signup', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+                mode: "cors",
+            });
+
+            console.log('Response Status:', response.status); // Check the actual status code
+            const data = await response.json(); // Assuming backend sends JSON response
+            console.log("Response from Server:", data);
+
+            if (response.ok) {
+                // If the response is successful
+                alert(data.message || "Admin registered successfully!");
+                navigate("/"); // Navigate to home on success
+            } else {
+                // If response status code is not in 2xx range, handle as failure
+                alert(`Failed to register admin: ${data.message || 'Unknown error'}`);
+            }
+        } catch (error) {
+            console.error('Error creating admin account:', error);
+            alert('Failed to create admin account!');
+        }
+  };
+
+  // Handle back button
+  const handleBack = () => {
+    navigate('/');
   };
 
   return (
     <section className={styles.container}>
       <div className={styles.card}>
-        <form className={styles.formContainer}>
+        <form className={styles.formContainer} onSubmit={handleSubmit}>
           {/* Form Header */}
           <FormHeader />
 
           {/* Input Grid */}
           <div className={styles.inputGrid}>
-            <InputField type="text" placeholder="username" />
-            <InputField type="email" placeholder="email@" />
-            <InputField type="password" placeholder="password" />
-            <InputField type="tel" placeholder="phoneNo." />
-            <InputField type="text" placeholder="firstname" />
-            <InputField type="text" placeholder="address" />
-            <InputField type="text" placeholder="lastname" />
+            <InputField
+              type="text"
+              placeholder="Username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+            <InputField
+              type="email"
+              placeholder="Email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+            />
+            <InputField
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+            />
+            <InputField
+              type="tel"
+              placeholder="Phone No."
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+            />
+            <InputField
+              type="text"
+              placeholder="First Name"
+              name="firstname"
+              value={formData.firstname}
+              onChange={handleChange}
+            />
+            <InputField
+              type="text"
+              placeholder="Address"
+              name="address"
+              value={formData.address}
+              onChange={handleChange}
+            />
+            <InputField
+              type="text"
+              placeholder="Last Name"
+              name="lastname"
+              value={formData.lastname}
+              onChange={handleChange}
+            />
 
-            {/* Date of Birth Field with Calendar */}
+            {/* Date of Birth */}
             <div className={styles.inputWrapper}>
               <input
                 type="date"
+                name="dob"
                 placeholder="DOB"
                 className={`${styles.formInput} ${styles.dateInput}`}
-                value={dob}
-                onChange={handleDateChange}
+                value={formData.dob}
+                onChange={handleChange}
+                required
               />
             </div>
           </div>
 
           {/* Form Actions */}
-          <FormActions />
+          <div className={styles.buttonContainer}>
+            <button type="button" className={styles.backButton} onClick={handleBack}>
+              Back
+            </button>
+            <button type="submit" className={styles.createButton}>
+              Create
+            </button>
+          </div>
         </form>
       </div>
     </section>

@@ -35,6 +35,10 @@ create table Admin(
     address varchar(100)
 );
 
+select * from Admin;
+INSERT INTO Admin VALUES (1, 'ADMIN', 'ADMIN123', '1234567890', "ADMIN", 'ADMIN', 'admin@gmail.com', 'isb, pakistan');
+
+
 create table Vendor(
 	serviceID int auto_increment primary key,
     service_name varchar(100) not null,
