@@ -1,11 +1,13 @@
 .bookEventContainer {
     padding: 20px;
+    padding-top: 10px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 80%;
     max-width: 500px;
     margin: 20px auto; /* Center the form */
+    margin-top: 0px;
   }
   
   .bookEventContainer h2 {
@@ -27,6 +29,7 @@
   
   .formGroup input[type='text'],
   .formGroup input[type='datetime-local'],
+  .formGroup input[type='time'],
   .formGroup select {
     width: 100%;
     padding: 10px;
