@@ -5,8 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="87993f45-222b-4775-9d72-adcfb83f7421" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/config/Securityconfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/controller/OrganizerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Event.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Event.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Organizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/model/Organizer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/OrganizerRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/OrganizerRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/VenueRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/repository/VenueRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/EventService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/EventService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/OrganizerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/java/com/example/Event_Management_System/service/OrganizerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Event-Management-System/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../Event-Management-System/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EventManagementSystem.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../EventManagementSystem.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ADMINLOGIN/EventLoginForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ADMINLOGIN/EventLoginForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookEvents/BookEvent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookEvents/BookEvent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookEvents/BookEvent.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookEvents/BookEvent.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

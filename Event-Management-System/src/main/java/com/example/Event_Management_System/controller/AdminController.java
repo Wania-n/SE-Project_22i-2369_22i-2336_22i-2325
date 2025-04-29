@@ -93,7 +93,7 @@ public class AdminController {
     }
 
     // Add functionality accordingly!
-    @PutMapping("/editVenue/{id}")
+    @PostMapping("/editVenue/{id}")
     public ResponseEntity<String> editVenue(@PathVariable int id, @RequestBody Venue venue) {
         try {
             boolean isUpdated = adminService.updateVenue(id, venue);

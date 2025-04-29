@@ -14,6 +14,8 @@ create table Organizer(
     DOB date
 );
 
+ALTER TABLE organizer MODIFY org_password VARCHAR(255);
+
 select * from Organizer;
 
 -- TODO-LIST for the Organizer
@@ -81,6 +83,9 @@ create table Venue(
     price float
 );
 
+select * from Venue;
+insert into Venue values (1,"Pearl Continental", 3000, "isb, Paksitan", 100.00);
+
 create table Event(
 	eventID int auto_increment primary key,
 	event_name varchar(100),
@@ -96,6 +101,21 @@ create table Event(
     foreign key (vendorID) references Vendor(serviceID) on delete set null,
     foreign key (interiorDesignerID) references InteriorDesigner(serviceID) on delete set null
 );
+
+SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_NAME = 'Event' AND COLUMN_NAME = 'interior_designerid';
+SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_NAME = 'Event' AND COLUMN_NAME = 'interiorDesignerID';
+
+alter table Event drop foreign key FKseaw6m770wacxtqedowkd6fx4;
+alter table Event drop foreign key event_ibfk_4;
+;
+
+
+SHOW COLUMNS FROM Event;
+select * from Event;
+ALTER TABLE Event DROP COLUMN guestID;
+alter table Event drop column interiorDesignerID
+
+alter table Event add column event_end_time time;
 
 create table Guest(
 	guestID int auto_increment primary key,

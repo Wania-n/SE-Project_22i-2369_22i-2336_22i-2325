@@ -7,4 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 public interface VenueRepository extends JpaRepository<Venue, Integer> {
     // Add all the custome queries here!
     boolean existsByName(String name);
+
+    Venue findByName(String name);
 }

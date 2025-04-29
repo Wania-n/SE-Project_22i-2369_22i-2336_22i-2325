@@ -1,6 +1,8 @@
 package com.example.Event_Management_System.model;
 import com.example.Event_Management_System.factory.User;
 import jakarta.persistence.*;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -19,7 +21,7 @@ public class Organizer extends User {
     @Column(name = "org_username", nullable = false, unique = true, length = 50)
     private String username;
 
-    @Column(name = "org_password", nullable = false, length = 50)
+    @Column(name = "org_password", nullable = false, length = 255)
     private String password;
 
     @Column(name = "DOB")
@@ -69,7 +71,7 @@ public class Organizer extends User {
         todoLists.add(list);
     }
 
-    // Adding relevent functions here!
+
     public void book_event(){
         // add functionality!
     }
