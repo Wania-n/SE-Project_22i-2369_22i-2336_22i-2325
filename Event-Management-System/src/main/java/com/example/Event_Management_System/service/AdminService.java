@@ -1,7 +1,7 @@
 package com.example.Event_Management_System.service;
 import com.example.Event_Management_System.dto.LoginRequest;
 import com.example.Event_Management_System.model.Admin;
-import com.example.Event_Management_System.model.Organizer;
+import com.example.Event_Management_System.model.Vendor;
 import com.example.Event_Management_System.repository.AdminRepository;
 import com.example.Event_Management_System.repository.InteriorDesignerRepository;
 import com.example.Event_Management_System.repository.VendorRepository;
@@ -9,12 +9,11 @@ import com.example.Event_Management_System.repository.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.example.Event_Management_System.model.Venue;
-import com.example.Event_Management_System.repository.VenueRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.util.List;
+import java.util.Optional;
 
 // This is the service class, which contains all the business logic, and calls to the repository layer for database handles
 @Service
@@ -83,6 +82,10 @@ public class AdminService {
     }
 
     // Create/Add Venue functionality ------------------------------------------
+    public List<Venue> getAllVenues() {
+        // JpaRepository provides findAll() out of the box
+        return venueRepo.findAll();
+    }
     public boolean createVenue(Venue venue) {
         if (venueRepo.existsByName(venue.getName())) {
             return false; // Venue already exists
@@ -90,34 +93,49 @@ public class AdminService {
         venueRepo.save(venue);  // Save the new venue
         return true;
     }
-    public boolean updateVenue(int id, Venue venue) {
-        if (!venueRepo.existsById(id)) {
-            return false; // If the venue does not exist
-        }
+    public boolean deleteVenueByName(String name) {
+        try {
+            // Find the venue by name
+            Optional<Venue> venueOptional = venueRepo.findByName(name);
 
-        // Retrieve the venue
-        Venue existingVenue = venueRepo.findById(id).orElse(null);
+            if (venueOptional.isEmpty()) {
+                return false; // If the venue doesn't exist
+            }
 
-        // Update the venue details
-        if (existingVenue != null) {
-            existingVenue.setName(venue.getName());
-            existingVenue.setAddress(venue.getAddress());
-            existingVenue.setCapacity(venue.getCapacity());
-            existingVenue.setPrice(venue.getPrice());
-
-            venueRepo.save(existingVenue); // Save updated venue
+            // Delete the venue
+            venueRepo.delete(venueOptional.get());
             return true;
+        } catch (Exception e) {
+            System.err.println("Error deleting venue: " + e.getMessage());
+            return false;
         }
-
-        return false; // Return false if venue doesn't exist
     }
-    public boolean deleteVenue(int id) {
-        if (!venueRepo.existsById(id)) {
-            return false; // If the venue doesn't exist
-        }
-
-        venueRepo.deleteById(id);  // Delete venue by ID
-        return true;
-    }
+//    public boolean createVendor(Vendor vendor) {
+//        // Use service_name instead of serviceName
+//        if (vendorRepo.existsByService_name(vendor.getServiceName())) {  // Updated to service_name
+//            return false; // Vendor already exists
+//        }
+//        vendorRepo.save(vendor);  // Save the new vendor
+//        return true;
+//    }
+//
+//
+//    public boolean deleteVendorByName(String name) {
+//        try {
+//            // Use service_name instead of serviceName
+//            Optional<Vendor> vendorOptional = vendorRepo.findByService_name(name);  // Updated to service_name
+//
+//            if (vendorOptional.isEmpty()) {
+//                return false; // Vendor doesn't exist
+//            }
+//
+//            // Delete the vendor
+//            vendorRepo.delete(vendorOptional.get());
+//            return true;
+//        } catch (Exception e) {
+//            System.err.println("Error deleting vendor: " + e.getMessage());
+//            return false;
+//        }
+//    }
 
 }

@@ -4,7 +4,11 @@ import com.example.Event_Management_System.model.Venue;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.example.Event_Management_System.model.Venue;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
 public interface VenueRepository extends JpaRepository<Venue, Integer> {
     // Add all the custome queries here!
     boolean existsByName(String name);
+    Optional<Venue> findByName(String name);
 }

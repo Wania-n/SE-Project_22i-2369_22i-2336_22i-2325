@@ -1,4 +1,6 @@
 package com.example.Event_Management_System.controller;
+import com.example.Event_Management_System.model.Vendor;
+
 import com.example.Event_Management_System.dto.LoginRequest;
 import com.example.Event_Management_System.model.Admin;
 import com.example.Event_Management_System.service.AdminService;
@@ -7,11 +9,16 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.example.Event_Management_System.model.Venue;
+import com.example.Event_Management_System.model.InteriorDesigner;
+
 import com.example.Event_Management_System.service.AdminService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Map;
 
 // This is the admin controller, it will control the admins, venues, vendors and interior designers
 @RestController
@@ -77,47 +84,91 @@ public class AdminController {
     }
 
     // Venue ------------------------------------------------------------------
-
+    @GetMapping("/getAllVenues")
+    public ResponseEntity<List<Venue>> getAllVenues() {
+        List<Venue> all = adminService.getAllVenues();
+        return ResponseEntity.ok(all);
+    }
     @PostMapping("/createVenue")
     public ResponseEntity<String> createVenue(@RequestBody Venue venue) {
-        try {
-            boolean isAdded = adminService.createVenue(venue);
-            if (isAdded) {
-                return ResponseEntity.status(HttpStatus.CREATED).body("Venue added successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Venue with the same name already exists.");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to add venue.");
+        // Checking for correct data passing
+        if (venue == null) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+        } else {
+            // Log data for debugging
+            System.out.println("Received Venue Data: " + venue);
+            System.out.println("Venue name: " + venue.getName());
+            System.out.println("Venue address: " + venue.getAddress());
+            System.out.println("Venue capacity: " + venue.getCapacity());
+            System.out.println("Venue price: " + venue.getPrice());
+            // Add other venue properties as needed
+        }
+
+        // Call the admin service layer
+        boolean isCreated = adminService.createVenue(venue);
+        if (isCreated) {
+            return ResponseEntity.ok().body("Venue created successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create Venue.");
         }
     }
 
-    // Add functionality accordingly!
-    @PutMapping("/editVenue/{id}")
-    public ResponseEntity<String> editVenue(@PathVariable int id, @RequestBody Venue venue) {
-        try {
-            boolean isUpdated = adminService.updateVenue(id, venue);
-            if (isUpdated) {
-                return ResponseEntity.status(HttpStatus.OK).body("Venue updated successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venue not found.");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to update venue.");
+    @PostMapping("/deleteVenue")
+    public ResponseEntity<String> deleteVenue(@RequestBody Map<String, String> payload) {
+        // Extract the venue name from the request body
+        String venueName = payload.get("name");
+
+        // Checking for correct data passing
+        if (venueName == null || venueName.isEmpty()) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid venue name received!!");
+        } else {
+            // Log data for debugging
+            System.out.println("Received Venue name for deletion: " + venueName);
+        }
+
+        // Call the admin service layer
+        boolean isDeleted = adminService.deleteVenueByName(venueName);
+        if (isDeleted) {
+            return ResponseEntity.ok().body("Venue deleted successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete Venue. Venue may not exist.");
         }
     }
-    @DeleteMapping("/deleteVenue/{id}")
-    public ResponseEntity<String> deleteVenue(@PathVariable int id) {
-        try {
-            boolean isDeleted = adminService.deleteVenue(id);
-            if (isDeleted) {
-                return ResponseEntity.status(HttpStatus.OK).body("Venue deleted successfully.");
-            } else {
-                return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Venue not found.");
-            }
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete venue.");
-        }
-    }
+
+
+    //VENDOR
+//    @PostMapping("/createVendor")
+//    public ResponseEntity<String> createVendor(@RequestBody Vendor vendor) {
+//        if (vendor == null) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+//        } else {
+//            System.out.println("Received Vendor Data: " + vendor);
+//        }
+//
+//        boolean isCreated = adminService.createVendor(vendor);
+//        if (isCreated) {
+//            return ResponseEntity.ok().body("Vendor created successfully!");
+//        } else {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to create Vendor. Vendor may already exist.");
+//        }
+//    }
+//
+//    @PostMapping("/deleteVendor")
+//    public ResponseEntity<String> deleteVendor(@RequestBody Map<String, String> payload) {
+//        String vendorName = payload.get("name");
+//
+//        if (vendorName == null || vendorName.isEmpty()) {
+//            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Invalid vendor name received!!");
+//        } else {
+//            System.out.println("Received Vendor name for deletion: " + vendorName);
+//        }
+//
+//        boolean isDeleted = adminService.deleteVendorByName(vendorName);
+//        if (isDeleted) {
+//            return ResponseEntity.ok().body("Vendor deleted successfully!");
+//        } else {
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to delete Vendor. Vendor may not exist.");
+//        }
+//    }
 
 }
