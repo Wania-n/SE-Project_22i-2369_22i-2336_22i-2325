@@ -44,7 +44,7 @@ public class Event {
     private Vendor vendor;
 
     @ManyToOne
-    @JoinColumn(name = "interior_designerid", nullable = true)
+    @JoinColumn(name = "interiorDesignerID", nullable = true)
     private InteriorDesigner interiorDesigner;
 
     // Constructor

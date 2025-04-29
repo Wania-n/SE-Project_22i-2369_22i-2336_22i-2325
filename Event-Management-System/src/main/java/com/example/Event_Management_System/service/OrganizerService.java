@@ -89,7 +89,6 @@ public class OrganizerService {
         if (!loginRequest.getUsername().matches(usernameRegex)) {
             return false;  // Username does not match the regex
         }
-
         // Validate the password format
         if (!loginRequest.getPassword().matches(passwordRegex)) {
             return false;  // Password does not match the regex
@@ -97,11 +96,9 @@ public class OrganizerService {
 
         // Retrieve the organizer by username from the database
         Optional<Organizer> optionalOrganizer = organizerRepo.findByUsername(loginRequest.getUsername());
-
         if (optionalOrganizer.isEmpty()) {
             return false;  // Organizer not found
         }
-
         Organizer organizer = optionalOrganizer.get();
 
         // Get the encoded password from the database
@@ -110,11 +107,9 @@ public class OrganizerService {
         // Compare the raw password with the hashed password using BCrypt
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         if (passwordEncoder.matches(loginRequest.getPassword(), storedPassword)) {
-
             // Password matches, successful login
             return true;
         }
-
         return false;  // Password does not match
     }
 

@@ -1,7 +1,11 @@
 package com.example.Event_Management_System.service;
 import com.example.Event_Management_System.model.Event;
+import com.example.Event_Management_System.model.InteriorDesigner;
+import com.example.Event_Management_System.model.Vendor;
 import com.example.Event_Management_System.model.Venue;
 import com.example.Event_Management_System.repository.EventRepository;
+import com.example.Event_Management_System.repository.InteriorDesignerRepository;
+import com.example.Event_Management_System.repository.VendorRepository;
 import com.example.Event_Management_System.repository.VenueRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,6 +24,12 @@ public class EventService {
 
     @Autowired
     private VenueRepository venueRepo;
+
+    @Autowired
+    private VendorRepository vendorRepo;
+
+    @Autowired
+    private InteriorDesignerRepository interiorDesignerRepo;
 
     // Date and Time Validation function
     private boolean isTimeWithinAllowedRange(LocalTime time) {
@@ -91,9 +101,39 @@ public class EventService {
         return venueRepo.findByName(name);
     }
 
+    // Getting event
+    public Event getEvent(String name){
+        return eventRepo.findByName(name);
+    }
+
+    // Getting vendor
+    public Vendor getVendor(String serviceName){
+        return vendorRepo.findByServiceName(serviceName);
+    }
+
+    // Getting vendor
+    public InteriorDesigner getInterior(String serviceName){
+        return interiorDesignerRepo.findByServiceName(serviceName);
+    }
+
     // Getting All Venue
     public List<Venue> getAllVenues(){
         return venueRepo.findAll();
+    }
+
+    // Getting All Events
+    public List<Event> getAllEvents(){
+        return eventRepo.findAll();
+    }
+
+    // Getting All Vendors
+    public List<Vendor> getAllVendors(){
+        return vendorRepo.findAll();
+    }
+
+    // Getting All Venue
+    public List<InteriorDesigner> getAllInteriorDesigners(){
+        return interiorDesignerRepo.findAll();
     }
 
 }

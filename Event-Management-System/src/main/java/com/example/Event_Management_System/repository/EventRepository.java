@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface EventRepository extends JpaRepository<Event, Integer> {
     // Add all the custome queries here!
+
+    Event findByName(String name);
 }

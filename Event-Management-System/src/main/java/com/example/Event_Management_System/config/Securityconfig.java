@@ -37,7 +37,7 @@ public class Securityconfig {
                         .sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED) // Create session when required
                 )
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/organizer/signup", "/api/organizer/login", "/api/organizer/delete", "/api/organizer/edit", "/api/admin/signup", "/api/admin/login", "/api/organizer/bookEvent", "/api/organizer/addVenues").permitAll()
+                        .requestMatchers("/api/organizer/signup", "/api/organizer/login", "/api/organizer/delete", "/api/organizer/edit", "/api/admin/signup", "/api/admin/login", "/api/organizer/bookEvent", "/api/organizer/getVenues", "/api/organizer/getEvents", "/api/organizer/getInteriorDesigners", "/api/organizer/getVendors", "/api/organizer/bookVendor", "/api/organizer/bookInterior").permitAll()
                         .anyRequest().authenticated() // Other requests need authentication
                 )
                 .httpBasic(withDefaults())

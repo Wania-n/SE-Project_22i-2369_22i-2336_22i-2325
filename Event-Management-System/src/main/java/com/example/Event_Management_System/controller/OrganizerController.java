@@ -1,9 +1,9 @@
 package com.example.Event_Management_System.controller;
+import com.example.Event_Management_System.dto.EventInterior;
 import com.example.Event_Management_System.dto.EventRequest;
+import com.example.Event_Management_System.dto.EventVendor;
 import com.example.Event_Management_System.dto.LoginRequest;
-import com.example.Event_Management_System.model.Event;
-import com.example.Event_Management_System.model.Organizer;
-import com.example.Event_Management_System.model.Venue;
+import com.example.Event_Management_System.model.*;
 import com.example.Event_Management_System.service.EventService;
 import com.example.Event_Management_System.service.GuestService;
 import com.example.Event_Management_System.service.OrganizerService;
@@ -75,7 +75,6 @@ public class OrganizerController {
         if (login == null || login.getUsername() == null || login.getPassword() == null) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Missing login credentials.");
         }
-
         try {
             UsernamePasswordAuthenticationToken authenticationToken =
                     new UsernamePasswordAuthenticationToken(login.getUsername(), login.getPassword());
@@ -190,15 +189,91 @@ public class OrganizerController {
         }
     }
 
+    @PostMapping("/bookVendor")
+    public ResponseEntity<String> bookVendor(@RequestBody EventVendor selection){
+
+        if(selection == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+        }else{
+            System.out.println("Event name: " + selection.getEvent());
+            System.out.println("Vendor name: " + selection.getVendor());
+        }
+
+        // if correct then ...
+        Event selected_event = eventService.getEvent(selection.getEvent());
+        Vendor selected_vendor = eventService.getVendor(selection.getVendor());
+        selected_event.setVendor(selected_vendor);
+
+        boolean isBooked = eventService.bookEvent(selected_event);
+        if(isBooked){
+            return ResponseEntity.ok("Vendor booked successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to book Event");
+        }
+    }
+
+    @PostMapping("/bookInterior")
+    public ResponseEntity<String> bookInteriorDesigner(@RequestBody EventInterior selection){
+
+        if(selection == null){
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Nothing received!!");
+        }else{
+            System.out.println("Event name: " + selection.getEvent());
+            System.out.println("InteriorDesigner name: " + selection.getDesigner());
+        }
+
+        // if correct then ...
+        Event selected_event = eventService.getEvent(selection.getEvent());
+        InteriorDesigner selected_interior = eventService.getInterior(selection.getDesigner());
+        selected_event.setInteriorDesigner(selected_interior);
+
+        boolean isBooked = eventService.bookEvent(selected_event);
+        if(isBooked){
+            return ResponseEntity.ok("Interior Designer booked successfully!");
+        } else {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to book Event");
+        }
+    }
+
     // Adding the Venues
-    @GetMapping("/addVenues")
+    @GetMapping("/getVenues")
     public ResponseEntity<List<Venue>> getVenue(){
         try{
             return ResponseEntity.ok(eventService.getAllVenues());
         } catch (Exception e) {
             return null;
         }
-
     }
+
+    // Adding all Events
+    @GetMapping("/getEvents")
+    public ResponseEntity<List<Event>> getEvent(){
+        try{
+            return ResponseEntity.ok(eventService.getAllEvents());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    // Adding all Vendors
+    @GetMapping("/getVendors")
+    public ResponseEntity<List<Vendor>> getVendor(){
+        try{
+            return ResponseEntity.ok(eventService.getAllVendors());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    // Adding all interior designers
+    @GetMapping("/getInteriorDesigners")
+    public ResponseEntity<List<InteriorDesigner>> getInteriorDesigner(){
+        try{
+            return ResponseEntity.ok(eventService.getAllInteriorDesigners());
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
 
 }

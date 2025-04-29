@@ -5,4 +5,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface VendorRepository extends JpaRepository<Vendor, Integer> {
     // Add all the custome queries here!
+
+    Vendor findByServiceName(String serviceName);
 }

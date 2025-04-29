@@ -51,6 +51,17 @@ create table Vendor(
     price float
 );
 
+ALTER TABLE Vendor RENAME COLUMN service_name TO serviceName;
+
+select * from Vendor;
+DESCRIBE vendor;
+SELECT serviceName FROM vendor;
+alter table Vendor drop column serviceType;
+
+insert into Vendor values(1, "Ratatouile", "12345678900", "ratatouile@gmail.com", "isb, Pakistan", "Buffet", 200);
+insert into Vendor values(2, "Bistro", "12345678900", "bistro@gmail.com", "isb, Pakistan", "Buffet", 200);
+
+
 create table Vendor_Menu(
 	vendorID int,
 	foreign key (vendorID) references Vendor(serviceID),
@@ -67,6 +78,9 @@ create table InteriorDesigner(
     service_type varchar(100),
     price float
 );
+
+select * from InteriorDesigner;
+insert into InteriorDesigner values(1, "Sparkles", "1234567890", "sparkles@gmail.com","isb, Pakistan", "decor", "500");
 
 create table InteriorDesigner_Design(
 	interiorDesignerID int,
@@ -102,10 +116,14 @@ create table Event(
     foreign key (interiorDesignerID) references InteriorDesigner(serviceID) on delete set null
 );
 
+ALTER TABLE Event ADD COLUMN interiorDesignerID INT, ADD CONSTRAINT FK_interiorDesigner FOREIGN KEY (interiorDesignerID) REFERENCES InteriorDesigner(serviceID) ON DELETE SET NULL;
+
+select * from Event;
+
 SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_NAME = 'Event' AND COLUMN_NAME = 'interior_designerid';
 SELECT CONSTRAINT_NAME FROM information_schema.KEY_COLUMN_USAGE WHERE TABLE_NAME = 'Event' AND COLUMN_NAME = 'interiorDesignerID';
 
-alter table Event drop foreign key FKseaw6m770wacxtqedowkd6fx4;
+alter table Event drop foreign key FKhvchgw4n443t5ss5kl9fep5nb;
 alter table Event drop foreign key event_ibfk_4;
 ;
 
@@ -113,7 +131,8 @@ alter table Event drop foreign key event_ibfk_4;
 SHOW COLUMNS FROM Event;
 select * from Event;
 ALTER TABLE Event DROP COLUMN guestID;
-alter table Event drop column interiorDesignerID
+alter table Event drop column interiorDesignerID;
+
 
 alter table Event add column event_end_time time;
 
